@@ -1,0 +1,26 @@
+@model practicando.Models.Usuario
+
+<h2>Registrar Usuario</h2>
+
+<form asp-action="Crear" method="post">
+    <div>
+        <label>Nombre</label>
+        <input asp-for="Nombre" />
+        <span asp-validation-for="Nombre"></span>
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div>
+        <label>País</label>
+        <input asp-for="Pais" />
+        <span asp-validation-for="Pais"></span>
+    </div>
+    <button type="submit">Guardar</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

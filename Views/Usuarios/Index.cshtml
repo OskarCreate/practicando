@@ -1,0 +1,29 @@
+@model List<(practicando.Models.Usuario usuario, string nombreOficial, string bandera, string region)>
+
+<h2>Usuarios Registrados</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>País (Ingresado)</th>
+            <th>Nombre Oficial</th>
+            <th>Bandera</th>
+            <th>Región</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.usuario.Nombre</td>
+                <td>@item.usuario.Email</td>
+                <td>@item.usuario.Pais</td>
+                <td>@item.nombreOficial</td>
+                <td><img src="@item.bandera" alt="Bandera" width="50" /></td>
+                <td>@item.region</td>
+            </tr>
+        }
+    </tbody>
+</table>
