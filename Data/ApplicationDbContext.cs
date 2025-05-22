@@ -10,4 +10,6 @@ public class ApplicationDbContext : IdentityDbContext
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options) { }
     public DbSet<Usuario> Usuarios { get; set; }
+    public DbSet<HistorialPost> HistorialPosts { get; set; }
+
 }

@@ -17,7 +17,7 @@ public class UsuariosController : Controller
 
     public async Task<IActionResult> Index()
 {
-    var usuarios = await _context.Usuarios.ToListAsync(); // <- CORREGIDO
+    var usuarios = await _context.Usuarios.ToListAsync(); //
     var enrichedUsuarios = new List<(Usuario, string nombreOficial, string bandera, string region)>();
 
     foreach (var usuario in usuarios)

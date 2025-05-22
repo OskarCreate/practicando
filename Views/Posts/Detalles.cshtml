@@ -1,0 +1,34 @@
+@model practicando.Models.Post
+@{
+    ViewData["Title"] = "Detalles del Post";
+    var autor = ViewBag.Autor as practicando.Models.User;
+    var comentarios = ViewBag.Comentarios as List<practicando.Models.Comment>;
+}
+
+@if (ViewBag.Error != null)
+{
+    <p>😢 @ViewBag.Error</p>
+    <pre>@ViewBag.Exception</pre>
+}
+<h2>Título:</h2>
+<h2>@Model.Title</h2>
+<p>Resumen:</p>
+<p>@Model.Body</p>
+
+<h4>Autor:</h4>
+<p>@autor?.Name</p>
+
+<h4>Comentarios:</h4>
+@if (comentarios == null || !comentarios.Any())
+{
+    <p>No se encontraron comentarios para este post.</p>
+}
+else
+{
+    <ul>
+        @foreach (var c in comentarios)
+        {
+            <li><strong>@c.Name</strong> (<em>@c.Email</em>): @c.Body</li>
+        }
+    </ul>
+}

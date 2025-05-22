@@ -209,6 +209,30 @@ namespace practicando.Data.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("practicando.Models.HistorialPost", b =>
+                {
+                    b.Property<int?>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime?>("FechaConsulta")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("PostId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int?>("UsuarioId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HistorialPosts");
+                });
+
             modelBuilder.Entity("practicando.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
