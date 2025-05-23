@@ -8,7 +8,7 @@ namespace practicando.Data
         public ApplicationDbContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<ApplicationDbContext>();
-            optionsBuilder.UseSqlite("Data Source=app.db");
+            optionsBuilder.UseNpgsql("Host=dpg-d0ntugemcj7s73dtjqcg-a.oregon-postgres.render.com;Database=api_4q4m;Username=api_4q4m_user;Password=gzCptGJGf0UCCLTWfgO1EbCW9gvsz5ql;Port=5432;SSL Mode=Require;Trust Server Certificate=true");
 
             return new ApplicationDbContext(optionsBuilder.Options);
         }
